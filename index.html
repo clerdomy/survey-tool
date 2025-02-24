@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisa de Mercado - Presença Digital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style>
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .gradient-bg {
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+
+        .hover-scale:hover {
+            transform: scale(1.02);
+        }
+
+        .input-focus {
+            transition: all 0.3s ease;
+        }
+
+        .input-focus:focus {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen">
+    <div class="container mx-auto px-4 py-8 md:py-16">
+        <div data-aos="fade-down" class="max-w-4xl mx-auto bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl overflow-hidden">
+            <!-- Cabeçalho -->
+            <div class="bg-gradient-to-r from-purple-600 to-blue-500 p-8 text-white">
+                <h1 class="text-4xl md:text-5xl font-bold text-center mb-4">Pesquisa de Presença Digital</h1>
+                <p class="text-lg text-center text-white/90">Ajude-nos a entender suas necessidades digitais e receba uma análise personalizada.</p>
+            </div>
+
+            <!-- Formulário -->
+            <form id="surveyForm" class="p-8 space-y-8">
+                <!-- Seção: Informações Básicas -->
+                <div data-aos="fade-up" class="space-y-6">
+                    <h2 class="text-2xl font-bold text-gray-800 border-b pb-2">Informações Básicas</h2>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-gray-700 font-semibold block">Nome Completo *</label>
+                            <input type="text" name="name" required
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition-all input-focus">
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="text-gray-700 font-semibold block">E-mail *</label>
+                            <input type="email" name="email" required
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition-all input-focus">
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-gray-700 font-semibold block">Nome do Negócio</label>
+                            <input type="text" name="business"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition-all input-focus">
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="text-gray-700 font-semibold block">Segmento de Atuação *</label>
+                            <select name="segment" required
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition-all input-focus">
+                                <option value="">Selecione uma opção</option>
+                                <option value="comercio">Comércio</option>
+                                <option value="servicos">Serviços</option>
+                                <option value="autonomo">Profissional Autônomo</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Seção: Presença Digital -->
+                <div data-aos="fade-up" data-aos-delay="100" class="space-y-6">
+                    <h2 class="text-2xl font-bold text-gray-800 border-b pb-2">Presença Digital</h2>
+                    
+                    <div class="space-y-4">
+                        <label class="text-gray-700 font-semibold block">Você já possui um site? *</label>
+                        <div class="flex gap-6">
+                            <label class="flex items-center space-x-2 cursor-pointer hover-scale">
+                                <input type="radio" name="hasSite" value="sim" required
+                                    class="w-5 h-5 text-purple-600 focus:ring-purple-500">
+                                <span class="text-gray-700">Sim</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer hover-scale">
+                                <input type="radio" name="hasSite" value="nao" required
+                                    class="w-5 h-5 text-purple-600 focus:ring-purple-500">
+                                <span class="text-gray-700">Não</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Seção: Funcionalidades -->
+                <div data-aos="fade-up" data-aos-delay="200" class="space-y-6">
+                    <h2 class="text-2xl font-bold text-gray-800 border-b pb-2">Funcionalidades Desejadas</h2>
+                    
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <label class="flex items-center p-4 border rounded-lg cursor-pointer hover-scale bg-white">
+                            <input type="checkbox" name="features" value="portfolio"
+                                class="w-5 h-5 text-purple-600 focus:ring-purple-500 mr-3">
+                            <span class="text-gray-700">Portfólio de trabalhos/produtos</span>
+                        </label>
+                        <label class="flex items-center p-4 border rounded-lg cursor-pointer hover-scale bg-white">
+                            <input type="checkbox" name="features" value="contato"
+                                class="w-5 h-5 text-purple-600 focus:ring-purple-500 mr-3">
+                            <span class="text-gray-700">Formulário de contato</span>
+                        </label>
+                        <label class="flex items-center p-4 border rounded-lg cursor-pointer hover-scale bg-white">
+                            <input type="checkbox" name="features" value="blog"
+                                class="w-5 h-5 text-purple-600 focus:ring-purple-500 mr-3">
+                            <span class="text-gray-700">Blog/Notícias</span>
+                        </label>
+                        <label class="flex items-center p-4 border rounded-lg cursor-pointer hover-scale bg-white">
+                            <input type="checkbox" name="features" value="ecommerce"
+                                class="w-5 h-5 text-purple-600 focus:ring-purple-500 mr-3">
+                            <span class="text-gray-700">Loja virtual/E-commerce</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Seção: Investimento -->
+                <div data-aos="fade-up" data-aos-delay="300" class="space-y-6">
+                    <h2 class="text-2xl font-bold text-gray-800 border-b pb-2">Investimento</h2>
+                    
+                    <div class="space-y-2">
+                        <label class="text-gray-700 font-semibold block">Orçamento disponível *</label>
+                        <select name="budget" required
+                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition-all input-focus">
+                            <option value="">Selecione uma opção</option>
+                            <option value="ate-1000">Até R$ 1.000</option>
+                            <option value="1000-2000">R$ 1.000 a R$ 2.000</option>
+                            <option value="2000-5000">R$ 2.000 a R$ 5.000</option>
+                            <option value="acima-5000">Acima de R$ 5.000</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Seção: Comentários -->
+                <div data-aos="fade-up" data-aos-delay="400" class="space-y-6">
+                    <h2 class="text-2xl font-bold text-gray-800 border-b pb-2">Comentários Adicionais</h2>
+                    
+                    <div class="space-y-2">
+                        <label class="text-gray-700 font-semibold block">Suas necessidades específicas:</label>
+                        <textarea name="comments" rows="4"
+                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition-all input-focus"></textarea>
+                    </div>
+                </div>
+
+                <!-- Botão Submit -->
+                <div data-aos="fade-up" data-aos-delay="500" class="pt-6">
+                    <button type="submit"
+                        class="w-full bg-gradient-to-r from-purple-600 to-blue-500 text-white font-bold py-4 px-8 rounded-lg hover:opacity-90 transform transition-all duration-300 hover:scale-[1.02] focus:scale-[0.98] shadow-lg">
+                        Enviar Respostas
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Inicializar AOS (Animate On Scroll)
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        document.getElementById('surveyForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Coletar todas as respostas
+            const formData = new FormData(this);
+            const responses = {};
+            
+            // Processar campos básicos
+            responses.name = formData.get('name');
+            responses.email = formData.get('email');
+            responses.business = formData.get('business');
+            responses.segment = formData.get('segment');
+            responses.hasSite = formData.get('hasSite');
+            responses.budget = formData.get('budget');
+            responses.comments = formData.get('comments');
+            
+            // Processar checkboxes (features)
+            responses.features = [];
+            document.querySelectorAll('input[name="features"]:checked').forEach(checkbox => {
+                responses.features.push(checkbox.value);
+            });
+            
+            // Converter para JSON e salvar
+            const jsonData = JSON.stringify(responses, null, 2);
+            
+            // Criar arquivo para download
+            const blob = new Blob([jsonData], { type: 'application/json' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `survey_response_${new Date().getTime()}.json`;
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+            document.body.removeChild(a);
+
+            // Mostrar mensagem de sucesso com animação
+            const successMessage = document.createElement('div');
+            successMessage.className = 'fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg transform translate-x-full';
+            successMessage.textContent = 'Respostas enviadas com sucesso!';
+            document.body.appendChild(successMessage);
+
+            // Animar entrada
+            setTimeout(() => {
+                successMessage.style.transform = 'translate(0)';
+                successMessage.style.transition = 'transform 0.5s ease';
+            }, 100);
+
+            // Animar saída e remover
+            setTimeout(() => {
+                successMessage.style.transform = 'translate-x-full';
+                setTimeout(() => {
+                    document.body.removeChild(successMessage);
+                }, 500);
+            }, 3000);
+            
+            // Limpar o formulário
+            this.reset();
+        });
+    </script>
+</body>
+</html>
